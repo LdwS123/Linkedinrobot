@@ -1,4 +1,3 @@
-
 import time
 import random
 import os
@@ -220,22 +219,70 @@ if __name__ == "__main__":
     print("--- LinkedIn Automation Bot ---")
     print("Disclaimer: Use responsibly and at your own risk.")
 
+    # Define your target companies here
+    # YC Fintechs, Neobanks, and other notable startups
     target_companies = [
-        "Current",
-        "Chime",
-        "Varo Bank",
-        "N26",
-        "Revolut",
-        "Monzo",
-        "Brex",
-        "Ramp",
-        "Mercury",
-        "Stripe",
-        "Plaid",
+        "Current",       # Neobank
+        "Chime",         # Neobank
+        "Varo Bank",     # Neobank
+        "N26",           # Neobank (EU)
+        "Revolut",       # Fintech/Neobank
+        "Monzo",         # Neobank (UK)
+        "Brex",          # YC Fintech (Corporate cards)
+        "Ramp",          # YC Fintech (Corporate cards)
+        "Mercury",       # YC Fintech (Banking for startups)
+        "Stripe",        # Payments Fintech
+        "Plaid",         # Financial data API
+        "Robinhood",     # YC Fintech (Trading)
+        "Coinbase",      # YC Fintech (Crypto)
+        "Gusto",         # YC Fintech (Payroll)
+        "Affirm",        # YC Fintech (Lending)
+        "Blend",         # YC Fintech (Lending)
+        "Toss",          # YC Fintech (Payments, Asia)
+        "TrueLayer",     # YC Fintech (Open Banking)
+        "OpenSea",       # YC (NFT)
+        "Rappi",         # YC (LatAm Superapp)
+        "Checkr",        # YC (Background checks)
+        "Flexport",      # YC (Logistics)
+        "Segment",       # YC (Data)
+        "Zapier",        # YC (Automation)
+        "Docker",        # YC (DevOps)
+        "Ginkgo Bioworks", # YC (Biotech)
+        "Cruise",        # YC (Autonomous vehicles)
+        "DoorDash",      # YC (Delivery)
+        "Instacart",     # YC (Delivery)
+        "Rippling",      # YC (HR/Payroll)
+        "Scale AI",      # YC (AI)
+        "Sift",          # YC (Fraud detection)
+        "LendUp",        # YC (Fintech)
+        "Wealthfront",   # YC (Fintech)
+        "SoFi",          # Fintech
+        "Klarna",        # Fintech
+        "Wise",          # Fintech
+        "Adyen",         # Fintech
+        "Checkout.com",  # Fintech
+        "Payoneer",      # Fintech
+        "Marqeta",       # Fintech
+        "Tink",          # Fintech
+        "Nubank",        # Neobank (LatAm)
+        "Intercom",      # YC (SaaS)
+        "Notion",        # YC (SaaS)
+        "Airbnb",        # YC (Marketplace)
+        "Reddit",        # YC (Social)
+        "Twitch",        # YC (Streaming)
+        "GitLab",        # YC (DevOps)
+        "Segment",       # YC (Data)
+        "PagerDuty",     # YC (DevOps)
+        "Algolia",       # YC (Search)
+        "Mixpanel",      # YC (Analytics)
+        # Ajoute d'autres entreprises YC ou fintechs selon tes besoins
     ]
 
-    CONNECT_LIMIT_PER_COMPANY = 3
-    TOTAL_CONNECT_LIMIT = 15
+    # --- Safety Limits ---
+    # How many connection requests to send per company searched
+    CONNECT_LIMIT_PER_COMPANY = 10 # Plus large pour atteindre 50 au total
+    # Absolute maximum connections for the entire script run
+    TOTAL_CONNECT_LIMIT = 50 # Étendu à 50 connexions par session
 
     linkedin_username, linkedin_password = get_credentials()
 

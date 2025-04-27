@@ -129,7 +129,7 @@ def search_and_connect(driver, companies, connect_limit_per_company=5, total_con
             break
 
         print(f"--- Recherche de personnes chez {company} ---")
-        driver.get(f"https://www.linkedin.com/search/results/people/?keywords={company}")
+        driver.get(f"https://www.linkedin.com/search/results/people/?keywords={company}&geoUrn=%5B%22103644278%22%5D")
         random_delay(4, 7)
 
         company_connections = 0
@@ -280,7 +280,7 @@ if __name__ == "__main__":
 
     # --- Safety Limits ---
     # How many connection requests to send per company searched
-    CONNECT_LIMIT_PER_COMPANY = 10 # Plus large pour atteindre 50 au total
+    CONNECT_LIMIT_PER_COMPANY = 4 # Plus large pour atteindre 50 au total
     # Absolute maximum connections for the entire script run
     TOTAL_CONNECT_LIMIT = 50 # Étendu à 50 connexions par session
 
